@@ -1,6 +1,10 @@
 import React from 'react';
 import { ApolloProvider, InMemoryCache, ApolloClient } from '@apollo/client';
-import Routing from './routes/index';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Home from './pages/Home';
+import PastLaunches from './pages/PastLaunches';
+import Rocket from './pages/Rocket';
+import NavBar from './components/NavBar';
 
 const client = new ApolloClient({
     uri: 'https://api.spacex.land/graphql',
@@ -9,7 +13,17 @@ const client = new ApolloClient({
 
 const App = () => (
     <ApolloProvider client={client}>
-        <Routing />
+        <Router>
+            <div className="general">
+                <NavBar />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/launches" component={PastLaunches} />
+                    <Route exact path="/rocket/:id" component={Rocket} />
+                </Switch>
+            </div>
+        </Router>
+
     </ApolloProvider>
 );
 
