@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useQuery, gql } from '@apollo/client';
 import Loader from '../Loader';
 import Error from '../Error';
-import LaunchItem from '../LaunchItem';
-import Filter from '../Filter/Filter';
+
+import DisplayLaunches from '../DisplayLaunches/DisplayLaunches';
 const GET_LAUNCH_DETAILS = gql`
 {
     launches {
@@ -11,7 +11,7 @@ const GET_LAUNCH_DETAILS = gql`
       mission_name
       launch_date_local
       launch_success
-      id
+      launch_year
       rocket {
         rocket_name
         rocket_type
@@ -33,22 +33,15 @@ function Launches() {
     return <Loader></Loader>
   if (error)
     return <Error />
-  { console.log(data) }
-  return (<div className="container">
+  {
+    let filtered_data
+    console.log(data)
 
-    <h1 className="display-4 mt-5 my-3 d-flex justify-content-center" >Launches</h1>
-    <div className="my-3">
-      <p><span className="px-3 mr-2 bg-success" /> = Success</p>
-      <p><span className="px-3 mr-2 bg-danger" /> = Fail</p>
-      <Filter listenToYear={listenToYear} />
-    </div>
-    <div className='con'>
-      {data.launches.map(launch => (
-        <LaunchItem key={launch.id} launch={launch} />
-      ))}
-    </div>
-  </div>
-  )
+    return (
+      <DisplayLaunches data={data} />
+
+    )
+  }
 }
 
 export default Launches

@@ -35,6 +35,12 @@ const App = () => (
                         <Rocket></Rocket>
 
                     </Route >
+                    <Route exact path="/launcheinfo/:id"  >
+                        <NavBar></NavBar>
+                        <Rocket></Rocket>
+
+                    </Route >
+
                 </Switch>
             </div>
         </Router>
