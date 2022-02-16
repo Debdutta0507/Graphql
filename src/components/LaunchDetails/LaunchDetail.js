@@ -40,7 +40,7 @@ function LaunchDetail() {
 
         return (
             <div>
-                <h1 className="display-4 my-3">
+                <h1 className="display-4 my-3 mt-5 d-flex justify-content-center">
                     <span className="text-dark">Mission:</span> {mission_name}
                 </h1>
                 <h4 className="mb-3">Launch Details</h4>
