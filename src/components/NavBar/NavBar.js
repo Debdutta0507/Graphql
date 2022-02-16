@@ -21,7 +21,7 @@ const GET_ROCKETS_NAMES = gql`
 
 const NavBar = () => {
     const navRef = useRef(null);
-    const { isMobileView, isMenuOpen, setIsMenuOpen } = useNavigation(navRef);
+    const { isMenuOpen, setIsMenuOpen } = useNavigation(navRef);
 
     const { data, loading, error } = useQuery(GET_ROCKETS_NAMES);
 
@@ -33,13 +33,13 @@ const NavBar = () => {
             <div className="row">
                 <TopMenu
                     isMenuOpen={isMenuOpen}
-                    isMobileView={isMobileView}
+
                     toggleMenu={setIsMenuOpen}
                     rockets={data.rockets}
                 />
                 <SideMenu
                     isMenuOpen={isMenuOpen}
-                    isMobileView={isMobileView}
+
                     toggleMenu={setIsMenuOpen}
                     rockets={data.rockets}
                 />

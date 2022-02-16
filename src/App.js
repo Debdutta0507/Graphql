@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import PastLaunches from './pages/PastLaunches';
 import Rocket from './pages/Rocket';
 import NavBar from './components/NavBar';
+import Launches from './components/LaunchInfo';
 
 const client = new ApolloClient({
     uri: 'https://api.spacex.land/graphql',
@@ -15,16 +16,30 @@ const App = () => (
     <ApolloProvider client={client}>
         <Router>
             <div className="general">
-                <NavBar />
+
                 <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/launches" component={PastLaunches} />
-                    <Route exact path="/rocket/:id" component={Rocket} />
+                    <Route exact path="/" >
+                        <NavBar></NavBar>
+                        <Home></Home>
+                    </Route>
+                    <Route exact path="/launches" >
+                        <NavBar></NavBar>
+                        <PastLaunches></PastLaunches>
+                    </Route>
+                    <Route exact path="/launcheinfo" >
+                        <NavBar></NavBar>
+                        <Launches></Launches>
+                    </Route>
+                    <Route exact path="/rocket/:id"  >
+                        <NavBar></NavBar>
+                        <Rocket></Rocket>
+
+                    </Route >
                 </Switch>
             </div>
         </Router>
 
-    </ApolloProvider>
+    </ApolloProvider >
 );
 
 export default App;

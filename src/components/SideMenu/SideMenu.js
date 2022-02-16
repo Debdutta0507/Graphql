@@ -5,11 +5,10 @@ import MenuLinks from '../MenuLinks';
 // style
 import './style.scss';
 
-const SideMenu = ({ rockets, isMenuOpen, isMobileView, toggleMenu }) => (
+const SideMenu = ({ rockets, isMenuOpen, toggleMenu }) => (
     <div
-        className={`nav__sidebar position-absolute d-flex align-items-center justify-content-center text-center ${
-            isMenuOpen ? '' : 'nav--animate'
-        } `}
+        className={`nav__sidebar position-absolute d-flex align-items-center justify-content-center text-center ${isMenuOpen ? '' : 'nav--animate'
+            } `}
     >
         <div className="d-flex flex-column">
             <div className="nav__link">
@@ -18,7 +17,7 @@ const SideMenu = ({ rockets, isMenuOpen, isMobileView, toggleMenu }) => (
                 </Link>
             </div>
 
-            {isMobileView && <MenuLinks rockets={rockets} toggleMenu={toggleMenu} />}
+
         </div>
     </div>
 );

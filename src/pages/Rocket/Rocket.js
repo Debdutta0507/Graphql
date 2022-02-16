@@ -4,6 +4,8 @@ import { gql, useQuery } from '@apollo/client';
 import Error from './../../components/Error';
 import Loader from './../../components/Loader';
 import Rocket from './../../components/Rocket';
+import { useParams } from 'react-router-dom';
+
 
 const GET_ROCKET_INFO = gql`
     query GET_ROCKET_INFO($rocketId: ID!) {
@@ -31,7 +33,11 @@ const GET_ROCKET_INFO = gql`
 `;
 
 const RocketPage = ({ match }) => {
-    const rocketId = match.params.id;
+
+    // let { rocketId } = useParams();
+    // console.log(rocketId)
+    const { id } = useParams()
+    let rocketId = id
 
     const { data, loading, error } = useQuery(GET_ROCKET_INFO, {
         variables: { rocketId },
