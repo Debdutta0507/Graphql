@@ -6,6 +6,7 @@ import PastLaunches from './pages/PastLaunches';
 import Rocket from './pages/Rocket';
 import NavBar from './components/NavBar';
 import Launches from './components/LaunchInfo';
+import LaunchDetail from './components/LaunchDetails';
 
 const client = new ApolloClient({
     uri: 'https://api.spacex.land/graphql',
@@ -37,7 +38,7 @@ const App = () => (
                     </Route >
                     <Route exact path="/launcheinfo/:id"  >
                         <NavBar></NavBar>
-                        <Rocket></Rocket>
+                        <LaunchDetail></LaunchDetail>
 
                     </Route >
 

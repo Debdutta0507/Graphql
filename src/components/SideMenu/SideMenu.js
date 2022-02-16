@@ -15,6 +15,12 @@ const SideMenu = ({ rockets, isMenuOpen, toggleMenu }) => (
                 <Link to="/launches" onClick={() => toggleMenu(!isMenuOpen)}>
                     PAST LAUNCHES
                 </Link>
+
+            </div>
+            <div className="nav__link">
+                <Link to="/launcheinfo">
+                    MISSIONS
+                </Link>
             </div>
 
 

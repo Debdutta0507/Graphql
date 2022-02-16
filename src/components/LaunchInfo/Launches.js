@@ -9,6 +9,7 @@ const GET_LAUNCH_DETAILS = gql`
     launches {
   
       mission_name
+      id
       launch_date_local
       launch_success
       launch_year
