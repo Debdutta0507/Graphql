@@ -45,8 +45,8 @@ function LaunchDetail() {
                 </h1>
                 <h4 className="mb-3">Launch Details</h4>
                 <ul className="list-group">
-                    <li className="list-group-item bg-dark ">Mission Id: {id}</li>
-                    <li className="list-group-item bg-dark">Launch Year: {launch_year}</li>
+                    <li className="list-group-item bg-dark ">Mission Id : {" " + id}</li>
+                    <li className="list-group-item bg-dark">Launch Year : {" " + launch_year}</li>
                     <li className="list-group-item bg-dark">
                         Launch Successful:{' '}
                         <span className={classNames({
@@ -59,9 +59,9 @@ function LaunchDetail() {
                 </ul>
                 <h4 className="my-3">Rocket Details</h4>
                 <ul className="list-group">
-                    <li className="list-group-item bg-dark">Rocket ID: {data.launch.rocket.rocket.id}</li>
-                    <li className="list-group-item bg-dark">Rocket Name: {rocket_name}</li>
-                    <li className="list-group-item bg-dark">Rocket Type: {rocket_type}</li>
+                    <li className="list-group-item bg-dark">Rocket ID : {" " + data.launch.rocket.rocket.id}</li>
+                    <li className="list-group-item bg-dark">Rocket Name : {" " + rocket_name}</li>
+                    <li className="list-group-item bg-dark">Rocket Type : {" " + rocket_type}</li>
                 </ul>
                 <hr />
                 <Link to="/launcheinfo" className="btn btn-secondary">Back</Link>
