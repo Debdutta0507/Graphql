@@ -26,8 +26,8 @@ function DisplayLaunches({ data }) {
                 <Filter listenToYear={listenToYear} />
             </div>
             <div className='con'>
-                {filtered_data.map(launch => (
-                    <LaunchItem key={launch.id} launch={launch} />
+                {filtered_data.map((launch, i) => (
+                    <LaunchItem key={i} launch={launch} />
                 ))}
             </div>
         </div>

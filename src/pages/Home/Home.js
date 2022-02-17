@@ -8,7 +8,7 @@ import MainHeader from './../../components/MainHeader';
 import './style.scss';
 import Cards from '../../components/Cards.js';
 
-const GET_COMPANY_INFO = gql`
+export const GET_COMPANY_INFO = gql`
     {
         company {
             name
