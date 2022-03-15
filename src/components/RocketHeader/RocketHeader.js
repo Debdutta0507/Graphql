@@ -11,7 +11,7 @@ const RocketHeader = ({ id, name }) => {
     };
 
     return (
-        <div className="d-flex flex-column justify-content-around w-100">
+        <div data-testid="header" className="d-flex flex-column justify-content-around w-100">
             <div style={imgStyle}>
                 <div className="rocket__header__container h-50  d-flex flex-column align-items-center justify-content-center">
                     <h1 className="rocket__header__text">{name.toUpperCase()}</h1>

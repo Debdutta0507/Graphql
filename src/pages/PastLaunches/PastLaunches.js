@@ -5,7 +5,7 @@ import Error from './../../components/Error';
 import Loader from './../../components/Loader';
 import LaunchesFeed from './../../components/LaunchesFeed';
 
-const GET_LAUNCHES_QUERY = gql`
+export const GET_LAUNCHES_QUERY = gql`
     {
         launchesPast(limit: 15) {
             mission_name

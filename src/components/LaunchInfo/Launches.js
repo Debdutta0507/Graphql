@@ -4,7 +4,7 @@ import Loader from '../Loader';
 import Error from '../Error';
 
 import DisplayLaunches from '../DisplayLaunches/DisplayLaunches';
-const GET_LAUNCH_DETAILS = gql`
+export const GET_LAUNCH_DETAILS = gql`
 {
     launches {
   

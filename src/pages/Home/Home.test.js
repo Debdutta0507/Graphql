@@ -55,27 +55,11 @@ test("Loader is working", async () => {
 
 
 
-    debug();
+
     const name = await screen.findByText("SpaceX")
+    debug();
     expect(name).toBeInTheDocument();
 
 
 })
 
-// describe("CharactersList test suite", () => {
-
-//     beforeEach(() => {
-
-//         render(<MockHome />)
-
-//         screen.debug()
-
-//     })
-
-//     test("contains a heading element", () => {
-
-//         screen.debug();
-
-//     })
-
-// })

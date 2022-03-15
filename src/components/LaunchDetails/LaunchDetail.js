@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import { useParams } from 'react-router-dom';
 import Loader from './../Loader';
 
-const LAUNCH_QUERY = gql`
+export const LAUNCH_QUERY = gql`
 query LaunchQuery($id:ID!) {
     launch(id: $id) {
         

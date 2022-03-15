@@ -7,7 +7,7 @@ import Rocket from './../../components/Rocket';
 import { useParams } from 'react-router-dom';
 
 
-const GET_ROCKET_INFO = gql`
+export const GET_ROCKET_INFO = gql`
     query GET_ROCKET_INFO($rocketId: ID!) {
         rocket(id: $rocketId) {
             name
@@ -38,6 +38,7 @@ const RocketPage = ({ match }) => {
     // console.log(rocketId)
     const { id } = useParams()
     let rocketId = id
+    console.log(typeof (id));
 
     const { data, loading, error } = useQuery(GET_ROCKET_INFO, {
         variables: { rocketId },
